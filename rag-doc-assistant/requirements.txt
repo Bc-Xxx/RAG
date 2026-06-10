@@ -14,6 +14,8 @@ chromadb>=0.5.0
 # 文档解析
 pypdf>=4.0.0          # 读 PDF
 python-docx>=1.0.0    # 读 DOCX（Word 文件）
+pymupdf>=1.24.0       # PDF 渲染为图片（用于 OCR）
+easyocr>=1.7.0        # OCR 识别扫描件
 
 # Web 服务
 fastapi>=0.110.0
