@@ -5,35 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ddc8e808-1e02-4451-b8de-06e9eee13271" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/rag-doc-assistant/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rag-doc-assistant/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rag-doc-assistant/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rag-doc-assistant/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rag-doc-assistant/llm_client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rag-doc-assistant/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rag-doc-assistant/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rag-doc-assistant/rag_engine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rag-doc-assistant/tests/test_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/2026院校职业技能等级认定通知.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/chroma_db/45230ed4-9821-4432-aac2-c88f018324b0/data_level0.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/chroma_db/45230ed4-9821-4432-aac2-c88f018324b0/header.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/chroma_db/45230ed4-9821-4432-aac2-c88f018324b0/length.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/chroma_db/45230ed4-9821-4432-aac2-c88f018324b0/link_lists.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/chroma_db/chroma.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/rag-doc-assistant/chroma_db/chroma.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/chroma_db_tuning/670ab92c-bfa7-4870-9f9d-53725cd11b0e/data_level0.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/chroma_db_tuning/670ab92c-bfa7-4870-9f9d-53725cd11b0e/header.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/chroma_db_tuning/670ab92c-bfa7-4870-9f9d-53725cd11b0e/length.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/chroma_db_tuning/670ab92c-bfa7-4870-9f9d-53725cd11b0e/link_lists.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/chroma_db_tuning/chroma.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/day15-18.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/day15_ai_translate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/day15_llm_api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/day16_embedding.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/day17_rag_basic.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/day18_rag_tuning.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/day19_rag_api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/rag-doc-assistant/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/app.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/rag-doc-assistant/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/rag_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/rag-doc-assistant/rag_engine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rag-doc-assistant/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/rag-doc-assistant/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rag-doc-assistant/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/rag-doc-assistant/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,25 +37,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.day15-18.executor&quot;: &quot;Run&quot;,
-    &quot;Python.day15_ai_translate.executor&quot;: &quot;Run&quot;,
-    &quot;Python.day15_llm_api.executor&quot;: &quot;Run&quot;,
-    &quot;Python.day16_embedding.executor&quot;: &quot;Run&quot;,
-    &quot;Python.day17_rag_basic.executor&quot;: &quot;Run&quot;,
-    &quot;Python.day18_rag_tuning.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/桌面/studypy/pythonProject3&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.day15-18.executor": "Run",
+    "Python.day15_ai_translate.executor": "Run",
+    "Python.day15_llm_api.executor": "Run",
+    "Python.day16_embedding.executor": "Run",
+    "Python.day17_rag_basic.executor": "Run",
+    "Python.day18_rag_tuning.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/桌面/studypy/pythonProject3",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\桌面\studypy\pythonProject3\rag-doc-assistant" />
@@ -235,6 +213,7 @@
       <workItem from="1780905164926" duration="85000" />
       <workItem from="1780911877989" duration="2284000" />
       <workItem from="1780915498018" duration="18760000" />
+      <workItem from="1781057431262" duration="4299000" />
     </task>
     <servers />
   </component>
