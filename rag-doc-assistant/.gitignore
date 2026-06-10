@@ -3,4 +3,5 @@ chroma_db/
 uploads/
 __pycache__/
 *.pyc
+app.log
 old/
