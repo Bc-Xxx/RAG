@@ -1,7 +1,8 @@
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import JSONResponse
+from pydantic import BaseModel
 from rag_engine import RAGEngine
 from config import settings
 import os
@@ -41,16 +42,69 @@ def upload(file: UploadFile = File(...)):
     return {"status": "ok", "filename": file.filename, "chunks": chunks}
 
 
-@app.get("/ask", summary="提问", description="根据已上传的文档回答问题")
-def ask(question: str):
-    result = engine.ask(question)
-    return result
+class AskRequest(BaseModel):
+    question: str
+
+@app.post("/ask", summary="提问", description="根据已上传的文档回答问题（流式返回）")
+def ask(req: AskRequest):
+    return StreamingResponse(
+        engine.ask_stream(req.question),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"}
+    )
 
 
 @app.post("/clear", summary="清空对话", description="清除对话历史，重新开始")
 def clear():
     engine.clear_history()
     return {"status": "ok", "message": "对话历史已清空"}
+
+
+@app.get("/documents", summary="文档列表", description="获取已上传的所有文档")
+def list_documents():
+    docs = []
+    if os.path.exists(settings.UPLOAD_DIR):
+        for filename in os.listdir(settings.UPLOAD_DIR):
+            file_path = os.path.join(settings.UPLOAD_DIR, filename)
+            if os.path.isfile(file_path):
+                size = os.path.getsize(file_path)
+                # 统计该文件在向量库中的 chunk 数
+                chunk_count = 0
+                if engine.vectorstore is not None:
+                    try:
+                        results = engine.vectorstore.get(
+                            where={"source": file_path},
+                            include=[]
+                        )
+                        chunk_count = len(results["ids"]) if results["ids"] else 0
+                    except Exception:
+                        chunk_count = -1  # 未知
+                docs.append({
+                    "filename": filename,
+                    "size": size,
+                    "chunks": chunk_count,
+                    "modified": os.path.getmtime(file_path)
+                })
+    docs.sort(key=lambda d: d["modified"], reverse=True)
+    return {"documents": docs}
+
+
+@app.delete("/documents", summary="清空所有文档", description="删除所有文档和向量索引")
+def delete_all_documents():
+    with lock:
+        engine.remove_all_documents()
+        engine.clear_history()
+    return {"status": "ok", "message": "所有文档已清空"}
+
+
+@app.delete("/documents/{filename}", summary="删除文档", description="删除指定文档及其向量索引")
+def delete_document(filename: str):
+    file_path = os.path.join(settings.UPLOAD_DIR, filename)
+    if not os.path.exists(file_path):
+        return JSONResponse(status_code=404, content={"error": "文档不存在"})
+    with lock:
+        result = engine.remove_document(filename)
+    return {"status": "ok", "filename": filename, "removed_chunks": result["removed_chunks"]}
 
 
 @app.exception_handler(Exception)
